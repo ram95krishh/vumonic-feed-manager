@@ -16,6 +16,12 @@
   "bugs": {
     "url": "https://github.com/ram95krishh/vumonic-feed-manager/issues"
   },
+  "engines": {
+    "node": "10.15.3"
+  },
+  "keywords": [
+    "heroku"
+  ],
   "homepage": "https://github.com/ram95krishh/vumonic-feed-manager#readme",
   "dependencies": {
     "async": "^3.1.1",
