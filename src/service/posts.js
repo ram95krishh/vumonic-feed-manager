@@ -45,7 +45,7 @@ const updateLikesById = async (req, res) => {
         post.likes.push(userId)
       }
     } else {
-      post.likes = post.likes.filter(id => id === userId)
+      post.likes = post.likes.filter(id => id !== userId)
     }
     const result = await post.save();
     return res.status(200).json({ isLiked: like, likesCount: result.likes.length })
