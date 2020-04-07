@@ -19,7 +19,6 @@ const getAllPostsQuery = (userModelName, count, page, userId) => {
         publishedDate: -1
       }
     },
-    { $limit: count }, { $skip: (count * page) },
     {
       $lookup: {
         from: userModelName,
@@ -31,6 +30,8 @@ const getAllPostsQuery = (userModelName, count, page, userId) => {
     {
       $unwind: '$author'
     },
+    { $skip: (count * page) },
+    { $limit: count },
     {
       $project: {
         '_id': 0,
